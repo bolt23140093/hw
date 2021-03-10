@@ -124,7 +124,7 @@ function addMarkerHiro(){
 	ball.position.y = 0.1;
 	
 	
-	var Cylin = new THREE.Mesh(new THREE.CylinderGeometry(0.1,0.1,0.5,0,0));
+	var Cylin = new THREE.Mesh(new THREE.CylinderGeometry(0.25,0.25,0.5,0,0));
 	markerRoot.add(Cylin);
 	Cylin.position.y = 0.1;
 	
@@ -147,7 +147,7 @@ function animate() {
 	markerHiro.children[0].rotation.x += 0.1;
 	
 	
-	markerHiro.children[1].position.set(0,Math.sin(theta),0);
+	markerHiro.children[1].position.set(0,2*Math.sin(theta),0);
 	
 	
 	renderer.render (scene, camera);	
