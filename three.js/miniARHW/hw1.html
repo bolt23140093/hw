@@ -123,11 +123,11 @@ function addMarkerHiro(){
 	markerRoot.add(ball);
 	ball.position.y = 0.1;
 	
-	/*
+	
 	var Cylin = new Three.Mesh(new THREE.CylinderGeometry(1,1,5,0,0));
 	markerRoot.add(Cylin);
 	Cylin.position.y = 0.1;
-	*/
+	
 	
 	var grid = new THREE.GridHelper(1,10,'red','white');
 	markerRoot.add(grid);
@@ -144,11 +144,11 @@ function animate() {
 
 	theta += 0.01;
 	markerHiro.children[0].position.set(0.5*Math.sin(theta),0.1,0.5*Math.cos(theta));
-	//markerHiro.children[0].rotation.x += 0.1;
+	markerHiro.children[0].rotation.x += 0.1;
 	
-	/*
+	
 	markerHiro.children[1].position.set(0,theta,0);
-	*/
+	
 	
 	renderer.render (scene, camera);	
 }
