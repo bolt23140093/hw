@@ -116,9 +116,17 @@ function init() {
 
 function addMarkerHiro(){
 
+
+	let markerRoot = new THREE.Group();
+
+	var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
+		type : 'pattern',
+		patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro'
+	})
+	
   ////////////////////////////////////////////////////////////////
   var gridXZ = new THREE.GridHelper(200, 20, 'red', 'white');
-  scene.add(gridXZ);
+  //scene.add(gridXZ);
   
   //let group = new THREE.Group();
   scene.add(group);
@@ -185,16 +193,16 @@ function animate() {
   group.rotation.y = angle;
   
   requestAnimationFrame(animate);
-  render();
+  renderer.render(scene, camera);
   
 
 }
 
-function render() {
+/*function render() {
 
   renderer.render(scene, camera);
 
-}
+}*/
 
 
 </script></body>
