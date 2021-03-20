@@ -116,28 +116,6 @@ function init() {
 		camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
 	})
 	
-	markerHiro = addMarkerHiro();
-	scene.add(markerHiro);
-	
-	
-	
-	
-}
-	
-function addMarkerHiro(){
-	let markerRoot = new THREE.Group()
-
-	var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
-		type : 'pattern',
-		patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro'
-	})
-
-	markerRoot.add(group);
-	markerRoot.add(group2);
-	
-	var grid = new THREE.GridHelper (1, 20, 'red', 'white');
-	//markerRoot.add (grid);
-	
 	group = new THREE.Group();
     scene.add (group);
     group2 = new THREE.Group();
@@ -167,6 +145,30 @@ function addMarkerHiro(){
     stick.position.set(0,0.1,-0.65);
     group2.add(stick);
 	group2.position.set(0, 0.1, -0.65)
+	
+	markerHiro = addMarkerHiro();
+	scene.add(markerHiro);
+	
+	
+	
+	
+}
+	
+function addMarkerHiro(){
+	let markerRoot = new THREE.Group()
+
+	var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
+		type : 'pattern',
+		patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro'
+	})
+
+	markerRoot.add(group);
+	markerRoot.add(group2);
+	
+	var grid = new THREE.GridHelper (1, 20, 'red', 'white');
+	//markerRoot.add (grid);
+	
+	
 			
 	return markerRoot;
 }
